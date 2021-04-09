@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Login</title>
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+ <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+ <section id="contact" class="contact">
+      <div class="container align-items-stretch justify-content-center" >
+         <div class="row justify-content-center">
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/login.php" method="post" role="form" class="php-email-form ">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              <div class="form-group col-md-6">
+                <label for="name">Password</label>
+                <input type="Password" class="form-control" name="Password" id="Password" required>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message">Invalid Credentials</div>
+              </div>
+              <div class="text-start"><button type="submit">Login</button></div>
+              <br>
+              <br>
+              
+              <p> Forgot Password?    <a href="">reset password</a></p> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+     <script src="assets/js/main.js"></script>
+</body>
+</html>
