@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Assigned Position</title>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+ <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9w-PaSlnkMhgUiDZYU6tr-5SJW-TjAiU",
+    authDomain: "ultraffic-266da.firebaseapp.com",
+    databaseURL: "https://ultraffic-266da-default-rtdb.firebaseio.com",
+    projectId: "ultraffic-266da",
+    storageBucket: "ultraffic-266da.appspot.com",
+    messagingSenderId: "988610068177",
+    appId: "1:988610068177:web:8aabeeb70aa88bdd470ff0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+<section class="contact">
+  <div class="container align-items-stretch justify-content-center" >
+    <div class="row justify-content-center">
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex flex-column align-items-stretch">
+        <h1 align="center">Assigned Positions</h1>
+        <div class="php-email-form">
+          <table id="myTable" class="table">
+            <thead>
+              <th scope="col">Email </th>
+              <th scope="col">Junction Name</th>
+              <th scope="col">Junction Address</th>
+            </thead>
+            <tbody>
+                 
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <select id="selectEmail">
+          <option>Select User</option>
+        </select>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/admin-viewassigned.js"></script>
+
+</body>
+</html>
