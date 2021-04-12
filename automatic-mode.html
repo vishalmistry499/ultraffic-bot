@@ -79,7 +79,7 @@
 				</div>
 			</div>
 		</div>
-			<div class="container col-md-6 d-flex flex-column justify-content-around align-items-start auto"  style="width: 50%;">
+			<div class="container col-md-6 d-flex flex-column justify-content-around align-items-start auto"  style="width: 70%;">
 				<div>
 				<h5>Junction: </h5>
 				<select class="form-control" name="junction" id="newJunction" style="margin-left: 20px; width: 100%" required>
@@ -94,20 +94,20 @@
                 <p>Sarvajanik College of Engg. & Tech, opp. Mission Hospital, Athwalines, Surat.</p>
                 </div>
                 <br>
-                <div>
-                	<div>                	
-                		<label><h5>Light traffic: </h5></label>
-                    <span class="text" id="light" style="padding: auto;">0</span>
-                	</div>   
-                  <div>                 
-                    <label><h5>Medium traffic: </h5></label>
-                    <span class="text" id="medium">0</span>
-                  </div>
-                  <div>                 
-                    <label><h5>Heavy traffic: </h5></label>
-                    <span class="text" id="heavy">0</span>
-                  </div>
-                </div>
+                <table>
+                  <tr>
+                    <td><label><h5>Light traffic: </h5></label></td>
+                    <td><input type="number" min="0" id="light" name="light"></td>
+                  </tr>
+                  <tr>
+                    <td><label><h5>Medium traffic: &nbsp </h5></label></td>
+                    <td> <input type="number" min="0" id="medium" name="light"></td>
+                  </tr>
+                  <tr>
+                    <td><label><h5>Heavy traffic: </h5></label></td>
+                    <td><input type="number" min="0" id="heavy" name="light"></td>
+                  </tr>
+                </table>
 			</div>
 
 	</div>

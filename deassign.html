@@ -40,11 +40,12 @@
     <option>Choose a number</option>
 </select> -->
  <section id="contact" class="contact">
-      <div class="container align-items-stretch justify-content-center " >
+      <div class="container align-items-center justify-content-center " >
          <div class="row justify-content-center">
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <div class="php-email-form ">
-              <h1 style="align-content: center;">De-assign Junction</h1>
+          <div class="col-lg-7 mt-5 mt-lg-0 ">
+            <div class="php-email-form d-flex flex-column align-items-center justify-content-center">
+              
+            <!-- <h1 align="center">De-assign Junction</h1> -->
             <div style="padding-bottom: 20px">
               <select id="emailid" onChange="myFunction()">
                   <option>Select email</option>
@@ -55,15 +56,26 @@
                   <option>Select Junctions</option>
               </select>              
             </div>
-                <div> <button id="btn" type="submit" onClick="btnclick()">button</button></div>
+                <div> <button id="btn" type="submit" onClick="btnclick()">De-assign</button></div>
 
                 <p id="demo"></p>
+                <!-- <hr style="border: 1px solid blue; width: 100%">
+          <h1 align="center">Assigned Positions</h1>
+          <table class="table">
+            <thead>
+              <th scope="col">Email &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</th>
+              <th scope="col">Junction Name</th>
+              <th scope="col">Junction Address</th>
+            </thead>
+          </table>
+          <table id="myTable" class="table">
+          </table> -->
             </div>
           </div>
           </div>
-        </div>
     </section>
      <script src="assets/js/main.js"></script>
   <script src="assets/js/deassign.js"></script>
+<script src="assets/js/admin-viewassigned.js"></script>
 </body>
 </html>
