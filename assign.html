@@ -39,17 +39,33 @@
  <!-- <select id="selectNumber" >
     <option>Choose a number</option>
 </select> -->
-<select id="emailid" >
-    <option>Select email</option>
-</select>
 
-<select id="junction">
-    <option>Select Junctions</option>
-</select>
+ <section id="contact" class="contact">
+      <div class="container align-items-stretch justify-content-center " >
+         <div class="row justify-content-center">
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <div class="php-email-form ">
+              <h1 style="align-content: center;">Assign Junction</h1>
+              <div style="padding-bottom: 20px">
+                <select id="emailid" >
+                    <option>Select email</option>
+                </select>
+              </div>
+              <div style="padding-bottom: 20px">
+                <select id="junction">
+                    <option>Select Junctions</option>
+                </select>
+              </div>                
+                <div> <button id="btn" type="submit" onClick="btnclick()">button</button></div>
 
-<div> <button id="btn" onClick="btnclick()">button</button></div>
+                <p id="demo"></p>            
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
 
-<p id="demo"></p>
+
 
      <script src="assets/js/main.js"></script>
   <script src="assets/js/assign.js"></script>
