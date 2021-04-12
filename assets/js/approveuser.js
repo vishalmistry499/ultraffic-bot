@@ -2,16 +2,6 @@
 
 var db = firebase.firestore();
 
-// var select = document.getElementById("selectNumber");
-// var options = ["1", "2", "3", "4", "5"];
-// for(var i = 0; i < options.length; i++) {
-//     var opt = options[i];
-//     var el = document.createElement("option");
-//     el.textContent = opt;
-//     el.value = opt;
-//     select.appendChild(el);
-// }
-
 var emailua=[]
 var emaildd = document.getElementById("emailid");
 
@@ -59,6 +49,36 @@ return user.update({
 })
 .then(() => {
     console.log("Document successfully updated!");
+
+    var length = emaildd.options.length;
+for (i = length-1; i >= 0; i--) {
+  emaildd.options[i] = null;
+}
+
+db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        y=doc.data();
+        if(y.status=="0")
+        {
+        var opt2 = y.email;
+        var e2 = document.createElement("option");
+        e2.textContent = opt2;
+        e2.value = opt2;
+        emaildd.appendChild(e2);
+        i++;
+
+        }
+        
+        
+    });
+});
+
+
+
+
+
+
+
 })
 .catch((error) => {
     // The document probably doesn't exist.

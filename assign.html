@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+ <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9w-PaSlnkMhgUiDZYU6tr-5SJW-TjAiU",
+    authDomain: "ultraffic-266da.firebaseapp.com",
+    databaseURL: "https://ultraffic-266da-default-rtdb.firebaseio.com",
+    projectId: "ultraffic-266da",
+    storageBucket: "ultraffic-266da.appspot.com",
+    messagingSenderId: "988610068177",
+    appId: "1:988610068177:web:8aabeeb70aa88bdd470ff0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+ <!-- <select id="selectNumber" >
+    <option>Choose a number</option>
+</select> -->
+<select id="emailid" >
+    <option>Select email</option>
+</select>
+
+<select id="junction">
+    <option>Select Junctions</option>
+</select>
+
+<div> <button id="btn" onClick="btnclick()">button</button></div>
+
+<p id="demo"></p>
+
+     <script src="assets/js/main.js"></script>
+  <script src="assets/js/assign.js"></script>
+</body>
+</html>

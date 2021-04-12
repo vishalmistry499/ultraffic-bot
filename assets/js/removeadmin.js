@@ -20,7 +20,7 @@ db.collection("users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         //console.log(doc.id, " => ", doc.data());
         x=doc.data();
-        if(x.status=="0")
+        if(x.status=="1" && x.isAdmin=="1")
         {
 
         emailua.push(x.email);
@@ -43,21 +43,55 @@ db.collection("users").get().then((querySnapshot) => {
 
 function btnclick() {
 
+
     var selectedemail=document.getElementById("emailid").value;
-    var user = db.collection("users").where("email", "==", selectedemail);
+
+
 
     db.collection("users").where("email", "==", selectedemail).get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+
+
           x=doc.id;
 
-          var user = db.collection("users").doc(x);
 
-// Set the "capital" field of the city 'DC'
-return user.update({
-    status: "1"
-})
+    var user = db.collection("users").doc(x);
+
+    return user.update({
+    isAdmin:"0"
+    })
 .then(() => {
+
+    var length = emaildd.options.length;
+for (i = length-1; i >= 0; i--) {
+  emaildd.options[i] = null;
+}
+
+
+db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        //console.log(doc.id, " => ", doc.data());
+        x=doc.data();
+        if(x.status=="1" && x.isAdmin=="1")
+        {
+
+        var opt2 = x.email;
+        var el2 = document.createElement("option");
+        el2.textContent = opt2;
+        el2.value = opt2;
+        emaildd.appendChild(el2);
+        i++;
+
+        //console.log(doc.id, " => ", x.email);
+
+        }
+        
+        
+    });
+});
+
+
     console.log("Document successfully updated!");
 })
 .catch((error) => {
@@ -66,24 +100,20 @@ return user.update({
 });
 
 
-
-        
-
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
     });
+  
 
 
   }
 
 
 
-
 function myFunction() {
-  var x = document.getElementById("emailid").value;
-  //document.getElementById("demo").innerHTML = "APPROVED ";
+   
   }
 
   
