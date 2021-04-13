@@ -23,6 +23,7 @@ db.collection("assignedpos").get().then((querySnapshot) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
 
+
         }
        
 
@@ -51,6 +52,12 @@ for (i = length-1; i >= 0; i--) {
   junctiondd.options[i] = null;
 }
 
+var opt = "Select Junction";
+var el = document.createElement("option");
+el.textContent = opt;
+el.value = opt;
+junctiondd.appendChild(el);
+
 db.collection("assignedpos").where("email", "==", selectedemail1)
     .get()
     .then((querySnapshot) => {
@@ -69,12 +76,15 @@ db.collection("assignedpos").where("email", "==", selectedemail1)
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+        document.getElementById('demo').innerHTML = "Error getting document";
     });
 
 
         console.log("Document successfully deleted!");
+        document.getElementById('demo').innerHTML = "Document successfully deleted";
     }).catch((error) => {
         console.error("Error removing document: ", error);
+        document.getElementById('demo').innerHTML = "Error removing document";
     });
 
 
@@ -92,6 +102,12 @@ var length = junctiondd.options.length;
 for (i = length-1; i >= 0; i--) {
   junctiondd.options[i] = null;
 }
+
+var opt = "Select Junction";
+var el = document.createElement("option");
+el.textContent = opt;
+el.value = opt;
+junctiondd.appendChild(el);
 
 db.collection("assignedpos").where("email", "==", selectedemail1)
     .get()

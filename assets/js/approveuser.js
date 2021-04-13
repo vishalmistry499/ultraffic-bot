@@ -49,11 +49,17 @@ return user.update({
 })
 .then(() => {
     console.log("Document successfully updated!");
+    document.getElementById('demo').innerHTML = "Document successfully updated!";
 
     var length = emaildd.options.length;
 for (i = length-1; i >= 0; i--) {
   emaildd.options[i] = null;
 }
+var opt = "Select Email";
+var el = document.createElement("option");
+el.textContent = opt;
+el.value = opt;
+emaildd.appendChild(el);
 
 db.collection("users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {

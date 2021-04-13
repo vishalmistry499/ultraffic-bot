@@ -61,6 +61,12 @@ function btnclick() {
     emaildd.options[i] = null;
     }
 
+    var opt = "Select Email";
+var el = document.createElement("option");
+el.textContent = opt;
+el.value = opt;
+emaildd.appendChild(el);
+
     db.collection("users").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             //console.log(doc.id, " => ", doc.data());
@@ -97,21 +103,26 @@ function btnclick() {
             
             db.collection("assignedpos").doc(zz).delete().then(() => {
                 console.log("Document successfully deleted!");
+                document.getElementById('demo').innerHTML = "Document successfully deleted";
             }).catch((error) => {
                 console.error("Error removing document: ", error);
+                document.getElementById('demo').innerHTML = "Error removing document";
             });
             console.log(doc.id, " => ", doc.data());
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+        document.getElementById('demo').innerHTML = "Error getting document";
     });
 
     console.log("Document successfully updated!");
+    document.getElementById('demo').innerHTML = "Document successfully updated";
 })
 .catch((error) => {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
+    document.getElementById('demo').innerHTML = "Error updated document";
 });
 
 
@@ -119,6 +130,7 @@ function btnclick() {
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+        document.getElementById('demo').innerHTML = "Error getting document";
     });
   
 

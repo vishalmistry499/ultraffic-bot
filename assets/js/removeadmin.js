@@ -2,16 +2,6 @@
 
 var db = firebase.firestore();
 
-// var select = document.getElementById("selectNumber");
-// var options = ["1", "2", "3", "4", "5"];
-// for(var i = 0; i < options.length; i++) {
-//     var opt = options[i];
-//     var el = document.createElement("option");
-//     el.textContent = opt;
-//     el.value = opt;
-//     select.appendChild(el);
-// }
-
 var emailua=[]
 var emaildd = document.getElementById("emailid");
 
@@ -33,7 +23,7 @@ db.collection("users").get().then((querySnapshot) => {
         emaildd.appendChild(el);
         i++;
 
-        //console.log(doc.id, " => ", x.email);
+        
 
         }
         
@@ -69,6 +59,13 @@ for (i = length-1; i >= 0; i--) {
 }
 
 
+var opt = "Select Email";
+var el = document.createElement("option");
+el.textContent = opt;
+el.value = opt;
+emaildd.appendChild(el);
+
+
 db.collection("users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         //console.log(doc.id, " => ", doc.data());
@@ -93,10 +90,12 @@ db.collection("users").get().then((querySnapshot) => {
 
 
     console.log("Document successfully updated!");
+    document.getElementById('demo').innerHTML = "Document successfully updated";
 })
 .catch((error) => {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
+    document.getElementById('demo').innerHTML = "Error updating document";
 });
 
 
@@ -104,6 +103,7 @@ db.collection("users").get().then((querySnapshot) => {
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+        document.getElementById('demo').innerHTML = "Error getting documents";
     });
   
 

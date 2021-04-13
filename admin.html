@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8">
+     <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Admin Page</title>
-    <!-- Google Fonts -->
+  <title>Admin Page </title>
+ Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -21,39 +20,10 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
-
-<!-- -----------------------old------------------------ -->
-<!-- <style type="text/css">
-  a {
-    color: white;
+<style>
+    p {
+    height: 10px;
   }
-</style>
-</head>
-<body>
- <section id="contact" class="contact">
-      <div class="container align-items-stretch justify-content-center " >
-         <div class="row justify-content-center align-items-center">
-          <div class="col-lg-7 mt-5 mt-lg-0 ">
-            <h1 align="center">Admin Features</h1>
-            <div class="php-email-form d-flex flex-column align-items-center justify-content-center">  
-             <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
-              <button type="button" class="btn btn-secondary"><a href="admin-addjunction.html">Add Junction</a></button>
-              <button type="button" class="btn btn-secondary"><a href="assign.html">Assign Junction</a></button>
-              <button type="button" class="btn btn-secondary"><a href="deassign.html">De-assign Junction</a></button>
-              <button type="button" class="btn btn-secondary"><a href="approveuser.html">Approve User</a></button>
-              <button type="button" class="btn btn-secondary"><a href="disapproveuser.html">Disapprove User</a></button>
-              <button type="button" class="btn btn-secondary"><a href="addadmin.html">Add Admin</a></button>
-              <button type="button" class="btn btn-secondary"><a href="removeadmin.html">Remove Admin</a></button>
-            </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-    </section> -->
-
-    <!-- ------------------------new------------------- -->
-<style type="text/css">
   a {
     color: white;
   }
@@ -62,48 +32,91 @@
     height: 100%;
   }
   td {
+    background-color: #47b2e4;
     width: 50%;
-    height: 100px;
+    height: 50px;
   }
   iframe {
     width: 100%;
     height: 100%;
   }
   .modal-dialog{
-    height: 90%;
+    height: 80%;
   }
   .modal-content{
-    height: 100%;
-    width: 100%;
+    height: 110%;
+    width: 170%;
   }
   .close{
     width: 10%;
   }
+.right {
+  position: absolute;
+  right: 0px;
+  width: 60%;
+  height: 85%;
+  border: 3px solid #000000;
+  margin: 125px 10px 10px 10px;
+}
+
+.left {
+  position: absolute;
+  left: 0px;
+  width: 40%;
+  height: auto;
+    padding: 10px;
+}
 </style>
 </head>
 <body>
+
+   <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-center">
+<h4 align="center" style="color: white;">UTRAFFIC BOT</h4>
+      <nav id="navbar" class="navbar">
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+<div class="left">
+
+
+
  <section id="contact" class="contact">
       <div class="container align-items-stretch justify-content-center " >
-         <div class="row justify-content-center align-items-center">
-          <div class="col-lg-7 mt-5 mt-lg-0 ">
+         <div class="row justify-content-start align-items-center" style="width: 90%">
+
+          <div class="col-lg-7 mt-5 mt-lg-0 " style="padding-top: 40px; width: 100%">
             <h1 align="center">Admin Features</h1>
             <div class="php-email-form d-flex flex-column align-items-center justify-content-center">  
-                <table width="100%" class="table table-dark">
+                <table width="100%" class="table table-light">
                   <tr>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m1">Add Junction</button></td>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m2">View Assigned Junctions</button></td>          
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m1">Add Junction</button></td>
+                             
+                  </tr>
+                  <!-- <tr>
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m2">View Assigned Junctions</button></td> 
+                  </tr> -->
+                  <tr>
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m3">Assign Junction</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m3">Assign Junction</button></td>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m4">De-assign Junction</button></td>
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m4">De-assign Junction</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m5">Approve User</button></td>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m6">Disapprove User</button></td>
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m5">Approve User</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m7">Add Admin</button></td>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal"data-target="#m8">Remove Admin</button></td>
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m6">Disapprove User</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" class="btn" data-toggle="modal"data-target="#m7">Add Admin</button></td>
+                  </tr>
+                  <td><button type="button" class="btn" data-toggle="modal"data-target="#m8">Remove Admin</button></td>
+                  <tr>
+                  <td>
+                    <button type="submit" onclick="btnclick()">Log out</button>
+                  </td>
                   </tr>
                 </table>
 
@@ -112,7 +125,7 @@
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Add Junction</h5>
+                    <h4 class="modal-title"> </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -124,11 +137,11 @@
               </div>
             </div>
               <!-- m2-->
-              <div class="modal fade" id="m2" tabindex="-1" role="dialog" aria-hidden="true">
+<!--               <div class="modal fade" id="m2" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Assigned Positions</h5>
+                    <h4 class="modal-title">ons</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -138,13 +151,13 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
              <!-- m3-->
               <div class="modal fade" id="m3" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Assign Junction</h5>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -160,7 +173,7 @@
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">De-assign Junction</h5>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -176,7 +189,7 @@
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Approve User</h5>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -192,7 +205,7 @@
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Disapprove User</h5>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -208,7 +221,7 @@
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Add Admin</h5>
+                    <h4 class="modal-title">  </h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -224,7 +237,7 @@
               <div class="modal-dialog  modal-xlg" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Remove Admin</h5>
+                    <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -239,19 +252,30 @@
               
             </div> 
               </div>
+
             </div>
+
+
           </div>
           </div>
         </div>
     </section>
-    <script type="text/javascript">$('#myModal').modal('handleUpdate')</script>
+
+
+</object>
+</div>
+
+<div class="right">
+<object type="text/html" data="admin-viewassigned.html" width="800px" height="600px" >
+</object>
+</div>
+ <script type="text/javascript">$('#myModal').modal('handleUpdate')</script>
       <!-- Vendor JS Files --> 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
      <script src="assets/js/main.js"></script>
-     <script src="assets/js/app.js"></script>
-     <script src="assets/js/admin.js"></script>     
+     <script src="assets/js/admin2.js"></script>     
 </body>
 </html>

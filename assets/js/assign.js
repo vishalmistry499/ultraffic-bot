@@ -57,17 +57,70 @@ function btnclick() {
     var selectedemail=document.getElementById("emailid").value;
     var selectedjunction=document.getElementById("junction").value;
 
-    
-db.collection("assignedpos").doc(selectedjunction).set({
-    address: selectedjunction,
-    email: selectedemail
-})
-.then(() => {
-    console.log("Document successfully written!");
-})
-.catch((error) => {
-    console.error("Error writing document: ", error);
+    var docRef = db.collection("assignedpos").doc(selectedjunction);
+
+docRef.get().then((doc) => {
+    if (doc.exists) {
+        aaaa=doc.data()
+        assignedmail=aaaa.email;
+        
+        
+        if(assignedmail==selectedemail)
+        {
+            console.log("No Update");
+                document.getElementById('demo').innerHTML = "No Update";
+        }
+
+        else
+        {
+            if (confirm('This Junction has already been assigned to '+assignedmail+"\nDo you still want to continue?")) 
+            {
+                db.collection("assignedpos").doc(selectedjunction).set({
+                    address: selectedjunction,
+                    email: selectedemail
+                })
+                .then(() => {
+                    console.log("Document successfully written2!");
+                    document.getElementById('demo').innerHTML = "Document Written successfully ";
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ", error);
+                    document.getElementById('demo').innerHTML = "Error writing document";    
+                });
+                //console.log('Thing was saved to the database.');
+              } 
+              else 
+              {
+                // Do nothing!
+                //console.log('Thing was not saved to the database.');
+              }
+
+        }
+
+        
+    } else {
+        db.collection("assignedpos").doc(selectedjunction).set({
+            address: selectedjunction,
+            email: selectedemail
+        })
+        .then(() => {
+            console.log("Document successfully written3!");
+            document.getElementById('demo').innerHTML = "Document Written successfully ";
+        })
+        .catch((error) => {
+            console.error("Error writing document: ", error);
+            document.getElementById('demo').innerHTML = "Error writing Document";
+        });
+        console.log('Thing was saved to the database.');
+
+        //console.log("No such document!");
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+    document.getElementById('demo').innerHTML = "Error getting document";
 });
+    
+
 
 
 

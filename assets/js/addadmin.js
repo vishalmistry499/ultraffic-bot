@@ -47,8 +47,8 @@ return user.update({
     isAdmin: "1"
 })
 .then(() => {
-    console.log("Document successfully updated!");
-
+    console.log("Successfully updated!"); 
+    document.getElementById("demo").innerHTML = "Successfully updated!";
 ////////////////////////////////////////////
 
 var length = emaildd.options.length;
@@ -56,6 +56,12 @@ for (i = length-1; i >= 0; i--) {
   emaildd.options[i] = null;
 }
 
+
+var opt = "Select Email";
+var el = document.createElement("option");
+el.textContent = opt;
+el.value = opt;
+emaildd.appendChild(el);
 
 db.collection("users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -88,6 +94,7 @@ db.collection("users").get().then((querySnapshot) => {
 .catch((error) => {
     // The document probably doesn't exist.
     console.error("Error updating document: ", error);
+    document.getElementById("demo").innerHTML = "Error updating document";
 });
 
 
@@ -98,6 +105,7 @@ db.collection("users").get().then((querySnapshot) => {
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+        document.getElementById("demo").innerHTML = "Error getting documents";
     });
 
     
