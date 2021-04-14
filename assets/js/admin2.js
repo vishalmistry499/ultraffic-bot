@@ -16,5 +16,7 @@ auth.onAuthStateChanged(user => {
   }
   else{
   	document.getElementById('overlay').style.display = "block";
+       document.getElementById('username').innerHTML = user.email;
+       
   }
 });
