@@ -54,6 +54,28 @@ db.collection("trafficsignals").get().then((querySnapshot) => {
 
 function btnclick() {
 
+
+    var user = firebase.auth().currentUser;
+
+        if(!user) {
+          window.location = 'test1.html'; //If User is not logged in, redirect to login page
+        }
+        else{
+
+            var uid = user.uid;
+        console.log(uid);
+  
+        var docRef = db.collection("users").doc(uid);
+  
+  docRef.get().then((doc) => {
+      if (doc.exists) {
+          aa=doc.data();
+          isAdmin=aa.isAdmin;
+  
+          if(isAdmin=="1")
+          {
+
+            
     var selectedemail=document.getElementById("emailid").value;
     var selectedjunction=document.getElementById("junction").value;
 
@@ -119,15 +141,30 @@ docRef.get().then((doc) => {
     console.log("Error getting document:", error);
     document.getElementById('demo').innerHTML = "Error getting document";
 });
-    
+          
+          }
+  
+          else
+          {
+                     console.log("NOT ADMIN");
+                     firebase.auth().signOut();
+                     window.alert("You are not Admin. Only Admins are allowed to Login.\nUse AndroidApp instead.");
+                     window.close();
+                      
+          }
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+  
+ 
+             
+        }
 
-
-
-
-
-
-
-
+/////////////////////
 
   }
 

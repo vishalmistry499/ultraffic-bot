@@ -13,10 +13,9 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
-
+<!-- The core Firebase JS SDK is always required and must be listed first --><script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
@@ -46,10 +45,10 @@
             <div class="php-email-form d-flex flex-column align-items-center justify-content-center">
                 
                  <div style="padding-bottom: 20px">
-                 	<input type="text" name="name" placeholder="name" id="junctionName">
+                 	<input class="form-control" type="number" min="0" max="9999" name="name" placeholder="name" id="junctionName" required>
                  </div>
                  <div style="padding-bottom: 20px">
-                 	<input type="text" name="address" placeholder="address" id="address">
+                 	<input class="form-control" type="text" name="address" placeholder="address" id="address" required>
                  </div>
                  <div>
                  	<button type="submit" id="btnAdd">Add</button>
