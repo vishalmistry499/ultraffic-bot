@@ -726,6 +726,15 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
 }
 
+.contact .info,.myprofile,.contact-us-form {
+  border-top: 3px solid #47b2e4;
+  border-bottom: 3px solid #47b2e4;
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+}
+
 .contact .info,.myprofile i {
   font-size: 20px;
   color: #47b2e4;
@@ -754,6 +763,9 @@ section {
   color: #37517e;
 }
 .myaccount input{
+  margin-bottom: 10px; 
+}
+.myaccount,.contact-us-form input{
   margin-bottom: 10px; 
 }
 
@@ -812,6 +824,9 @@ section {
 }
 
 .contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+.contact .php-email-form,.contact-us-form .form-group {
   padding-bottom: 8px;
 }
 
@@ -892,7 +907,23 @@ section {
   padding: 10px 12px;
 }
 
+.contact .contact-us-form input {
+  height: 44px;
+}
+
+.contact .contact-us-form textarea {
+  padding: 10px 12px;
+}
+
 .contact .php-email-form button[type="submit"] {
+  background: #47b2e4;
+  border: 0;
+  padding: 12px 34px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+.contact .contact-us-form button[type="submit"] {
   background: #47b2e4;
   border: 0;
   padding: 12px 34px;

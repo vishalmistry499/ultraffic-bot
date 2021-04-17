@@ -14,8 +14,9 @@
   <link href="assets/css/style.css" rel="stylesheet">
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+  
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
@@ -36,17 +37,36 @@
 
 </head>
 <body>
+
+ <section id="contact" class="contact">
+      <div class="container align-items-stretch justify-content-center " >
+         <div class="row justify-content-center">
+          <div class="col-lg-7 mt-5 mt-lg-0 ">
+            <h1 align="center">View Timings</h1>
+            <div class="php-email-form d-flex flex-column align-items-center justify-content-center" style="height: auto;">
+              
+              <div style="padding-bottom: 20px">
+              <select id="junction">
+              <option>Select Junction</option>
+              </select>
+              </div>
+              <div> <button id="btn" type="submit" onClick="btnclick()">View</button></div>
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
+
+
+              <p id="demo" align="center"></p>
+
+
  <!-- <select id="selectNumber" >
     <option>Choose a number</option>
 </select> -->
-<select id="emailid" onChange="myFunction()">
-    <option>Select email</option>
-</select>
-<div> <button id="btn" onClick="btnclick()">button</button></div>
 
-<p id="demo"></p>
 
      <script src="assets/js/main.js"></script>
-  <script src="assets/js/test.js"></script>
+  <script src="assets/js/viewtime.js"></script>
 </body>
 </html>
